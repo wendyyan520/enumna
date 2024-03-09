@@ -1,0 +1,17 @@
+# https://tea.xyz/what-is-this-file
+---
+version: 1.0.0
+codeOwners:
+  - '0xF42f79f40361EA18fEA032AC3AB361Bd4E9508b3'
+quorum: 1
+import requests
+
+def get_btc_price():
+    url = 'https://api.coinbase.com/v2/prices/BTC-USD/spot'
+    headers = {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+    }
+
+    try:
+        response = requests.get(url, headers=headers)
